@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Quiz Completed!</h1>
+    <p>Thank you, {{ username }}!</p>
+    <p><strong>Your Score:</strong> {{ score }} / {{ questions|length }}</p>
+
+    <h2>Quiz Summary</h2>
+    <ul>
+        {% for question in questions %}
+            <li>
+                <p><strong>Q{{ loop.index }}: {{ question['question'] }}</strong></p>
+                <p><strong>Your Answer:</strong> 
+                    <span {% if not question['is_correct'] %} style="color: red;" {% endif %}>
+                        {{ question['selected_answer'] if question['selected_answer'] else "No Answer" }}
+                    </span>
+                </p>
+                <p><strong>Correct Answer:</strong> {{ question['correct_answer'] }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+ 
+    <a href="{{ url_for('leaderboard') }}" class="home-btn">View Leaderboard</a>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz – {{ category|capitalize }} ({{ level|capitalize }})</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>{{ category|capitalize }} Quiz ({{ level|capitalize }})</h1>
+
+    <p>
+        Question <strong>{{ index }}</strong> of <strong>{{ total }}</strong> &nbsp;|&nbsp;
+        <strong>Time left:</strong> <span id="timer">120</span> s
+    </p>
+
+    <h2>{{ question['question'] }}</h2>
+
+    <form action="{{ url_for('next_question') }}" method="POST" style="margin-bottom:1.5rem;">
+        {% for option in question['options'] %}
+            <label>
+                <input  type="radio"
+                        name="selected_answer"
+                        value="{{ option }}"
+                        {% if option == selected %}checked{% endif %}>
+                {{ option }}
+            </label><br>
+        {% endfor %}
+
+        <!-- keep current question’s data so the view functions can store it -->
+        <input type="hidden" name="question_text"   value="{{ question['question'] }}">
+        <input type="hidden" name="correct_answer" value="{{ question['correct_answer'] }}">
+
+        <button type="submit">Next ➡</button>
+    </form>
+
+    {% if index > 1 %}
+        <!-- separate form so POST goes to the correct route -->
+        <form action="{{ url_for('prev_question') }}" method="POST">
+            <!-- also pass current choice when going backwards -->
+            {% if selected %}
+                <input type="hidden" name="selected_answer" value="{{ selected }}">
+            {% endif %}
+            <button type="submit">⬅ Previous</button>
+        </form>
+    {% endif %}
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

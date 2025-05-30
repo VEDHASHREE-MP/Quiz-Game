@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Quiz Category</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Choose Your Quiz Settings</h1>
+
+    <form action="{{ url_for('quiz_setup') }}" method="POST">
+
+        <label><strong>Select Category:</strong></label>
+        <select name="category" required>
+            <option value="science">Science</option>
+            <option value="history">History</option>
+            <option value="technology">Technology</option>
+            <option value="sports">Sports</option>
+        </select>
+
+        <label><strong>Select Difficulty:</strong></label>
+        <select name="level" required>
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Difficult</option>
+        </select>
+
+        <button type="submit">Start Quiz</button>
+    </form>
+</body>
+</html>

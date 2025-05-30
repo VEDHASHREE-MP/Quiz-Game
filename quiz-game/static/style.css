@@ -1,0 +1,180 @@
+/* General Page Styling */
+body {
+    font-family: 'Roboto', sans-serif; /* Improved font readability */
+    background: linear-gradient(135deg, #007991, #78ffd6); /* More vibrant color */
+    color: white;
+    margin: 0;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Centered Container */
+.container {
+    max-width: 700px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+/* Headings */
+h1 {
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Left-Aligned Quiz Content */
+.quiz-container {
+    text-align: left;
+    max-width: 600px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+
+/* Question Styling */
+h2 {
+    font-size: 1.8em;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+/* Answer Options */
+/* Name Input Box */
+input[type="text"] {
+    width: 90%;         /* Increased width */
+    padding: 16px;      /* Bigger padding */
+    font-size: 22px;    /* Larger font size */
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    text-align: center;
+    box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+/* Bigger Dropdown Selection */
+select {
+    width: 90%;         /* Increased width */
+    padding: 7px;      /* Bigger padding */
+    font-size: 20px;    /* Larger font size */
+    border-radius: 8px;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.2);
+    color: rgb(21, 19, 19);
+    border: none;
+    text-align: center;
+}
+
+/* Dropdown Hover Effect */
+select:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+label {
+    font-size: 1.7em;
+    display: block;
+    margin-bottom: 7px;
+    padding: 7px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+}
+.next-btn {
+    display: block;
+    margin: 20px auto; /* Centers like Previous button */
+    padding: 12px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    background: #ffd700;
+    color: black;
+    text-align: center;
+}
+
+.next-btn:hover {
+    background: #ffa500;
+    transform: scale(1.05);
+}
+
+/* Buttons */
+button {
+    padding: 12px 25px;
+    margin: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+    background: #ffd700;
+    color: black;
+}
+
+button:hover {
+    background: #ffa500;
+    transform: scale(1.05);
+}
+
+/* Timer Styling */
+#timer {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #ffd700;
+}
+
+/* Leaderboard Table */
+/* Larger Leaderboard Table */
+.leaderboard-table {
+    width: 90%;               /* Increased width */
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 20px;          /* Larger font */
+}
+
+/* Table Headers & Rows */
+.leaderboard-table th, .leaderboard-table td {
+    padding: 14px;            /* Increased padding */
+    border: 2px solid #ffffff80; /* Bolder border */
+}
+
+/* Styled Headers */
+.leaderboard-table th {
+    background: #ffa500;      /* More vibrant gold */
+    color: black;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+/* Table Row Styling */
+.leaderboard-table td {
+    background: rgba(255, 255, 255, 0.3); /* Slightly stronger contrast */
+}
+
+/* Top Score Highlight */
+.top-score {
+    font-weight: bold;
+    color: #ffcc00;           /* More vibrant gold */
+    background: rgba(255, 255, 255, 0.4); /* Soft highlight */
+}
+
+/* Leaderboard Container */
+.leaderboard-container {
+    max-width: 900px;         /* Larger size */
+    padding: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
